@@ -21,17 +21,23 @@ function App() {
   }, []);
 
   return (
-    <div className='container'>
-      <main>
-        <h1>Advice #{text.slip.id}</h1>
-        <p>{text.slip.advice}</p>
-        <figure>
-          <img src={pauseDesktop} alt='pause' />
-        </figure>
-        <button onClick={fetchAdvice}>
-          <img src={dice} alt='roll the dice' />
-        </button>
-      </main>
+    <>
+      <section>
+        <main>
+          {text.slip && (
+            <>
+              <h1>Advice #{text.slip.id}</h1>
+              <p>"{text.slip.advice}"</p>
+            </>
+          )}
+          <figure>
+            <img src={pauseDesktop} alt='pause' />
+          </figure>
+          <button onClick={fetchAdvice}>
+            <img src={dice} alt='roll the dice' />
+          </button>
+        </main>
+      </section>
       <footer>
         <div className='attribution'>
           Challenge by{" "}
@@ -49,7 +55,7 @@ function App() {
           .
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 
