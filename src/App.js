@@ -1,4 +1,3 @@
-// import './App.css';
 import { useState, useEffect } from "react";
 import pauseDesktop from "./images/pattern-divider-desktop.svg";
 import pauseMobile from "./images/pattern-divider-mobile.svg";
@@ -6,18 +5,19 @@ import dice from "./images/icon-dice.svg";
 
 function App() {
   const [text, setText] = useState([]);
+  const [clicked, setClicked] = useState(false);
 
-  const fetchAdvice = async () => {
+  const fetchAdviceAndSpin = async () => {
+    setClicked(true);
     const res = await fetch("https://api.adviceslip.com/advice");
     const data = await res.json();
 
-    console.log(data);
-
     setText(data);
+    setClicked(false);
   };
 
   useEffect(() => {
-    fetchAdvice();
+    fetchAdviceAndSpin();
   }, []);
 
   return (
@@ -30,16 +30,20 @@ function App() {
               <p>"{text.slip.advice}"</p>
             </>
           )}
-          <figure>
+          <picture>
+            <source srcSet={pauseMobile} media='(max-width: 575px)' />
             <img src={pauseDesktop} alt='pause' />
-          </figure>
-          <button onClick={fetchAdvice}>
+          </picture>
+          <button
+            className={clicked ? "spin" : ""}
+            onClick={fetchAdviceAndSpin}
+          >
             <img src={dice} alt='roll the dice' />
           </button>
         </main>
       </section>
       <footer>
-        <div className='attribution'>
+        <p className='attribution'>
           Challenge by{" "}
           <a
             href='https://www.frontendmentor.io?ref=challenge'
@@ -53,7 +57,7 @@ function App() {
             Valerie Jones
           </a>
           .
-        </div>
+        </p>
       </footer>
     </>
   );
