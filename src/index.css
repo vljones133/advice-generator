@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=Manrope:wght@800&display=swap");
 
 :root {
-  /* --light-cyan: #cee3e942; */
   --light-cyan: hsl(193, 38%, 86%);
   --neon-green: hsl(150, 100%, 66%);
-  /* --neon-green: hsla(150, 100%, 66%, 0.532); */
   --grayish-blue: hsl(217, 19%, 38%);
   --dark-grayish-blue: hsl(217, 19%, 24%);
   --dark-blue: hsl(218, 23%, 16%);
@@ -72,37 +70,21 @@ button {
   padding: 1.25em;
   margin-top: 2.5em;
   margin-bottom: -5em;
-  /* transition: 0.5s ease-in-out; */
-}
-
-button:hover {
-  box-shadow: 0px 0px 20px 10px hsla(150, 100%, 66%, 0.5);
 }
 
 button:active {
-  /* rotate: 360deg;
-  transition: rotate 1s; */
-  -webkit-animation: rotate-center 0.6s ease-in-out both;
-  animation: rotate-center 0.6s ease-in-out both;
+  box-shadow: 0px 0px 20px 10px hsla(150, 100%, 66%, 0.5);
 }
 
-@-webkit-keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+.spin {
+  animation: spin 1s linear;
 }
-@keyframes rotate-center {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  100% {
-    -webkit-transform: rotate(360deg);
+  to {
     transform: rotate(360deg);
   }
 }
@@ -112,9 +94,31 @@ footer {
 }
 
 .attribution {
+  font-family: "DM Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--neon-green);
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  color: hsla(150, 100%, 66%, 0.5);
+}
+
+@media (max-width: 575px) {
+  main {
+    width: 75%;
+    max-width: none;
+    padding: 1em;
+    margin: 0;
+  }
+
+  footer {
+    display: none;
+  }
 }
