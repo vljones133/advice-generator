@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import pauseDesktop from "./images/pattern-divider-desktop.svg";
 import pauseMobile from "./images/pattern-divider-mobile.svg";
 import dice from "./images/icon-dice.svg";
+import { act } from "@testing-library/react";
 
 interface AdviceData {
   slip: {
@@ -15,12 +16,17 @@ function App(): JSX.Element {
   const [clicked, setClicked] = useState<boolean>(false);
 
   const fetchAdviceAndSpin = async (): Promise<void> => {
-    setClicked(true);
+    act(() => {
+      setClicked(true);
+    });
+
     const res = await fetch("https://api.adviceslip.com/advice");
     const data = await res.json();
 
-    setText(data.slip);
-    setClicked(false);
+    act(() => {
+      setText(data.slip);
+      setClicked(false);
+    });
   };
 
   useEffect(() => {
