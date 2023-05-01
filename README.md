@@ -38,16 +38,16 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS custom properties, converted to SASS
 - Flexbox
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [SASS](https://sass-lang.com/) - CSS extension language
 
 ### To be continued...
 
 - [TypeScript](https://www.typescriptlang.org/) - JS with syntax for types
 - [Testing](https://jestjs.io/) - JS testing framework
-- [SASS](https://sass-lang.com/) - CSS extension language
 
 ### Code Snippets
 
@@ -81,11 +81,12 @@ Users should be able to:
 
 ### Continued development
 
-I plan to convert to SASS, implement a little testing, and as much TypeScript as I can into the project for more practice on these newly learned concepts.
+I plan to implement a little testing, and as much TypeScript as I can into the project for more practice on these newly learned concepts.
 
 ## Author
 
-- Website - [Valerie Jones' Portfolio](http://vjones.dev)
 - Frontend Mentor - [@VLJones133](https://www.frontendmentor.io/profile/vljones133)
-- Twitter - [@ValJonesDev](https://twitter.com/ValJonesDev)
-- LinkedIn - [@ValerieJones133](https://linkedin.com/in/valeriejones133)
+
+[![Website](https://img.shields.io/badge/Website-54039A?style=for-the-badge&logo=GoogleChrome&logoColor=white)](https://vjones.dev/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/valeriejones133)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ValJonesDev)
