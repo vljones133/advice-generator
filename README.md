@@ -11,7 +11,6 @@ This is a solution to the [Advice generator app challenge on Frontend Mentor](ht
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Code Snippets](#code-snippets)
-  - [Continued development](#continued-development)
 - [Author](#author)
 
 ## Overview
@@ -43,9 +42,6 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [SASS](https://sass-lang.com/) - CSS extension language
-
-### To be continued...
-
 - [TypeScript](https://www.typescriptlang.org/) - JS with syntax for types
 - [Testing](https://jestjs.io/) - JS testing framework
 
@@ -78,10 +74,6 @@ Users should be able to:
      <img src={dice} alt='roll the dice' />
   </button>
 ```
-
-### Continued development
-
-I plan to implement a little testing, and as much TypeScript as I can into the project for more practice on these newly learned concepts.
 
 ## Author
 
