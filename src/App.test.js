@@ -1,5 +1,10 @@
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitFor,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import App from "./App";
 
@@ -41,6 +46,10 @@ describe("App", () => {
     userEvent.click(screen.getByRole("button", { name: "roll the dice" }));
 
     await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(2));
+    await waitForElementToBeRemoved(() =>
+      screen.queryByText(/Do or do not\. There is no try\./i)
+    );
+
     expect(screen.getByText("Advice #99")).toBeInTheDocument();
     expect(
       screen.getByText(/The force is strong with this one\./i)
